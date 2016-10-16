@@ -1,0 +1,50 @@
+{
+  "name": "bazu-desktop",
+  "version": "0.1.0",
+  "description": "Bazu desktop app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corasan/bazu-desktop.git"
+  },
+  "keywords": [
+    "bazu",
+    "desktop",
+    "app",
+    "electron",
+    "javascript",
+    "node"
+  ],
+  "author": "Henry Pauino <henrypl360@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corasan/bazu-desktop/issues"
+  },
+  "homepage": "https://github.com/corasan/bazu-desktop#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.2",
+    "electron": "^1.4.3",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "path": "^0.12.7",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.0",
+    "webpack-stream": "^3.2.0"
+  }
+}
