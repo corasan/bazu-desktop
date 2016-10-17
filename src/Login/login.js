@@ -5,6 +5,13 @@ export default class Login extends Component {
     return (
       <div>
         <h1>Login!</h1>
+
+        <div>
+          <form>
+            <input type="email" placeholder="Email"/>
+            <input type="password" placeholder="Password"/>
+          </form>
+        </div>
       </div>
     );
   }
