@@ -24,7 +24,7 @@ app.set('views', '.');
 app.use(wdm);
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.render('index');
 });
 

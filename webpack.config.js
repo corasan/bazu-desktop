@@ -3,14 +3,13 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    `webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr`,
     './src/index.js',
     // './dist/styles.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:3000/'
+    publicPath: `http://localhost:3000/`
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
@@ -20,7 +19,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        loaders: ['babel-loader'],
         include: path.join(__dirname, 'src')
       },
       { test: /\.json$/, loader: 'json' },
