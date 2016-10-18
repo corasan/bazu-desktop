@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import fb from '../../firebase.config.js';
 
+import ContactsList from './contactsList';
+
 export default class Contacts extends Component {
   constructor() {
     super();
@@ -8,7 +10,8 @@ export default class Contacts extends Component {
   }
 
   componentWillMount() {
-    fb.database().ref('contacts').on('value', (contacts) => {
+    let user = fb.auth().currentUser;
+    fb.database().ref('contacts').ref(user.uid).on('value', (contacts) => {
       this.setState({contacts: contacts.val()});
     });
   }
@@ -17,6 +20,7 @@ export default class Contacts extends Component {
     return (
       <div>
         <h1>Contacts</h1>
+        <ContactsList contacts={this.state.contacts}/>
       </div>
     );
   }
