@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { userLogin } from '../utils/user';
 
 export default class Login extends Component {
   constructor() {
@@ -9,10 +10,18 @@ export default class Login extends Component {
     }
   }
 
+  handleEmail = (e) => {
+    e.preventDefault();
+    this.setState({email: e.target.value});
+  }
+
+  handlePassword = (e) => {
+    e.preventDefault();
+    this.setState({password: e.target.value});
+  }
+
   login = () => {
-    fb.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then((user) => console.log(user))
-    .catch((err) => console.log(err.message));
+    userLogin(this.state.email, this.state.password);
   }
 
   render() {
@@ -22,8 +31,9 @@ export default class Login extends Component {
 
         <div>
           <form>
-            <input type="email" placeholder="Email" onChange={ (email) => this.setState({email})}/>
-            <input type="password" placeholder="Password" onChange={ (password) => this.setState({password})}/>
+            <input type="email" placeholder="Email" onChange={this.handleEmail}/>
+            <input type="password" placeholder="Password" onChange={this.handlePassword}/>
+            <button type="submit" onClick={this.login}>Login</button>
           </form>
         </div>
       </div>
