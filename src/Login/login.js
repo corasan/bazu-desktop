@@ -30,11 +30,9 @@ export default class Login extends Component {
         <h1>Login!</h1>
 
         <div>
-          <form>
-            <input type="email" placeholder="Email" onChange={this.handleEmail}/>
-            <input type="password" placeholder="Password" onChange={this.handlePassword}/>
-            <button type="submit" onClick={this.login}>Login</button>
-          </form>
+          <input type="email" placeholder="Email" onChange={this.handleEmail}/>
+          <input type="password" placeholder="Password" onChange={this.handlePassword}/>
+          <button onClick={this.login}>Login</button>
         </div>
       </div>
     );

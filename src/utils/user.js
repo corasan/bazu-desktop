@@ -1,7 +1,10 @@
 import fb from '../../firebase.config.js';
+import { browserHistory } from 'react-router';
 
 export function userLogin(email, password) {
   fb.auth().signInWithEmailAndPassword(email, password)
-  .then((user) => console.log(user))
+  // .then((user) => browserHistory.push('/'))
   .catch((err) => console.log(err.message));
+
+  browserHistory.push('/');
 }

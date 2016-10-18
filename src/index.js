@@ -4,4 +4,4 @@ import ReactDOM from 'react-dom';
 import routes from './routes';
 import fb from '../firebase.config.js';
 
-ReactDOM.render(<Router history={browserHistory}>{routes}</Router>, document.getElementById('app'));
+ReactDOM.render(routes, document.getElementById('app'));

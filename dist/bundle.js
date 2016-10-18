@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "23a3ecc4317b055ce0a5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "30ca1096d3f11a5b7575"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -612,11 +612,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
-	  _routes2.default
-	), document.getElementById('app'));
+	_reactDom2.default.render(_routes2.default, document.getElementById('app'));
 	;
 
 	var _temp = function () {
@@ -27670,15 +27666,20 @@
 
 	var _login2 = _interopRequireDefault(_login);
 
+	var _contacts = __webpack_require__(247);
+
+	var _contacts2 = _interopRequireDefault(_contacts);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var routes = _react2.default.createElement(
 	  _reactRouter.Router,
-	  null,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _login2.default }),
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _app2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _login2.default })
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _contacts2.default })
 	  )
 	);
 
@@ -27779,10 +27780,6 @@
 
 	var _user = __webpack_require__(239);
 
-	var _firebaseConfig = __webpack_require__(240);
-
-	var _firebaseConfig2 = _interopRequireDefault(_firebaseConfig);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27833,12 +27830,7 @@
 	  }, {
 	    key: '__login__REACT_HOT_LOADER__',
 	    value: function __login__REACT_HOT_LOADER__() {
-	      // userLogin(this.state.email, this.state.password);
-	      _firebaseConfig2.default.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-	      // .then((user) => console.log(user))
-	      .catch(function (err) {
-	        return console.log(err.message);
-	      });
+	      (0, _user.userLogin)(this.state.email, this.state.password);
 	    }
 	  }, {
 	    key: 'render',
@@ -27904,14 +27896,18 @@
 
 	var _firebaseConfig2 = _interopRequireDefault(_firebaseConfig);
 
+	var _reactRouter = __webpack_require__(35);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function userLogin(email, password) {
-	  _firebaseConfig2.default.auth().signInWithEmailAndPassword(email, password).then(function (user) {
-	    return console.log(user);
-	  }).catch(function (err) {
+	  _firebaseConfig2.default.auth().signInWithEmailAndPassword(email, password)
+	  // .then((user) => browserHistory.push('/'))
+	  .catch(function (err) {
 	    return console.log(err.message);
 	  });
+
+	  _reactRouter.browserHistory.push('/');
 	}
 	;
 
@@ -27932,11 +27928,11 @@
 	const firebase = __webpack_require__(241);
 
 	const config = {
-	  apiKey: "AIzaSyAi2Jzaqkb6bJLc1MqzeKSrroxsAtnKZKs",
-	  authDomain: "bazu-desktop.firebaseapp.com",
-	  databaseURL: "https://bazu-desktop.firebaseio.com",
-	  storageBucket: "bazu-desktop.appspot.com",
-	  messagingSenderId: "141102618577"
+	  apiKey: "AIzaSyBnQgOtWAauLXpRlKyfi7FvmxvourQoiGw",
+	  authDomain: "bazu-desktop-a66f2.firebaseapp.com",
+	  databaseURL: "https://bazu-desktop-a66f2.firebaseio.com",
+	  storageBucket: "",
+	  messagingSenderId: "852907388957"
 	};
 
 	module.exports = firebase.initializeApp(config);
@@ -28648,6 +28644,73 @@
 	module.exports = firebase.messaging;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Contacts = function (_Component) {
+	  _inherits(Contacts, _Component);
+
+	  function Contacts() {
+	    _classCallCheck(this, Contacts);
+
+	    return _possibleConstructorReturn(this, (Contacts.__proto__ || Object.getPrototypeOf(Contacts)).apply(this, arguments));
+	  }
+
+	  _createClass(Contacts, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Contacts'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Contacts;
+	}(_react.Component);
+
+	var _default = Contacts;
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(Contacts, 'Contacts', 'C:/Users/Henry/Documents/Github/bazu-desktop/src/Contacts/contacts.js');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', 'C:/Users/Henry/Documents/Github/bazu-desktop/src/Contacts/contacts.js');
+	}();
+
+	;
 
 /***/ }
 /******/ ]);
