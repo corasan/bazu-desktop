@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { userContacts } from '../utils/contacts';
+import { renderContacts } from '../utils/contacts';
 
 export default class ContactsList extends Component {
-  // renderContacts = () => {
-  //
-  // }
-
   render() {
     return (
       <table>
@@ -20,7 +16,7 @@ export default class ContactsList extends Component {
         </thead>
 
         <tbody>
-          {userContacts(this.props.contacts)}
+          {renderContacts(this.props.contacts)}
         </tbody>
       </table>
     );

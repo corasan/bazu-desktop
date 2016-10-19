@@ -1,7 +1,7 @@
 import fb from '../../firebase.config.js';
 import React, { Component } from 'react';
 
-export function userContacts(contacts) {
+export function renderContacts(contacts) {
   let arr = [];
   let counter = 1;
 
