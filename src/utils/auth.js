@@ -9,24 +9,19 @@ let replacePath = (nextState, replace, pathname) => {
 }
 
 
-export const userLogin = (email, password) => {
+export const userLogin = (email, password, user) => {
   fb.auth().signInWithEmailAndPassword(email, password)
   .then((user) => browserHistory.push('/'))
   .catch((err) => console.log(err.message));
 }
 
+// Redirect user based on if user is or isn't authenticated
 export const requireAuth = (nextState, replace) => {
-  let user = fb.auth().currentUser;
-
-  if (!user) {
-    replacePath(nextState, replace, '/login');
-  }
-}
-
-export const isAuth = (nextState, replace) => {
-  let user = fb.auth().currentUser;
-
-  if (user) {
-    replacePath(nextState, replace, '/');
-  }
+  fb.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      replacePath(nextState, replace, '/');
+    } else {
+      replacePath(nextState, replace, '/login');
+    }
+  });
 }

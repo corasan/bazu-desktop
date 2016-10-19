@@ -8,9 +8,9 @@ export default class ContactsList extends Component {
         <thead>
           <tr>
             <th>#</th>
-            <th>Nombre</th>
+            <th>Name</th>
             <th>Email</th>
-            <th>Numero</th>
+            <th>Number</th>
             <th></th>
           </tr>
         </thead>

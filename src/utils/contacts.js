@@ -1,7 +1,7 @@
 import fb from '../../firebase.config.js';
 import React, { Component } from 'react';
 
-export function renderContacts(contacts) {
+export const renderContacts = (contacts) => {
   let arr = [];
   let counter = 1;
 
@@ -17,4 +17,14 @@ export function renderContacts(contacts) {
   }
 
   return arr;
+}
+// Get user contacts object
+export const getContacts = (callback) => {
+  fb.auth().onAuthStateChanged((user) => {
+    if(user) {
+      fb.database().ref(`contacts/${user.uid}`).on('value', (contacts) => {
+        callback(contacts.val());
+      });
+    }
+  });
 }
