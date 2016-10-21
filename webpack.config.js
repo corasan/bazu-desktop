@@ -4,6 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: [
     './src/index.js',
+    './dist/styles.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,6 +20,7 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       { test: /\.json$/, loader: 'json' },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
     ],
     query: {
       presets: ['react', 'es2015', 'stage-0']
