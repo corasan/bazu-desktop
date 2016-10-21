@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { userLogin } from '../utils/auth';
+import { userLogin } from '../utils/authApi';
 
 export default class Login extends Component {
   constructor() {

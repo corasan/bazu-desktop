@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { renderContacts } from '../utils/contacts';
+import { renderContacts } from '../utils/contactsApi';
 
 export default class ContactsList extends Component {
   render() {

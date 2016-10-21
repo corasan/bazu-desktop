@@ -1,10 +1,10 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { requireAuth, isAuth } from './utils/auth';
+import { requireAuth, isAuth } from './utils/authApi';
 
 import Bazu from './app';
-import Login from './Login/login';
-import Contacts from './Contacts/contacts.js';
+import Login from './Login/Login';
+import Contacts from './Contacts/Contacts.js';
 
 const routes = (
   <Router history={browserHistory}>

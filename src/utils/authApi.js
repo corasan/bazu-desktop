@@ -25,3 +25,8 @@ export const requireAuth = (nextState, replace) => {
     }
   });
 }
+
+export const userLogout = () => {
+  fb.auth().signOut()
+  .then(() => browserHistory.push('/login'));
+}
