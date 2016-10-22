@@ -13,6 +13,7 @@ const port = process.env.PORT || 3000;
 const wdm = webpackDevMiddleware(compiler, {
   // path: config.output.path,
   publicPath: config.output.publicPath,
+  hot: true,
   stats: {
     colors: true
   }
@@ -35,3 +36,20 @@ app.listen(port, (error) => {
     console.log('Listening to port', port);
   }
 });
+
+//
+// var webpack = require('webpack');
+// var WebpackDevServer = require('webpack-dev-server');
+// var config = require('./webpack.config.hot');
+//
+// // Dev server with hot reload enabled
+// new WebpackDevServer(webpack(config), {
+//   publicPath: config.output.publicPath,
+//   hot: true,
+//   historyApiFallback: true
+// }).listen(3000, 'localhost', function (err, result) {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log('Listening at localhost:3000');
+// });
