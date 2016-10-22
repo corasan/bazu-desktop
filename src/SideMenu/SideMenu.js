@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 
 export default class SideMenu extends Component {
   render() {
     return (
       <div className="side-menu">
-
-        <div>
-          <p>Link 1</p>
-          <p>Link 2</p>
-        </div>
+        <h1>SideMenu</h1>
+        <ul>
+          <li><Link to="/">Contacts</Link></li>
+          <li><Link to="History">History</Link></li>
+          <li><Link to="Profile">Profile</Link></li>
+        </ul>
       </div>
     );
   }

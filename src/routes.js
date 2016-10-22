@@ -4,13 +4,18 @@ import { requireAuth, isAuth } from './utils/authApi';
 
 import Bazu from './app';
 import Login from './Login/Login';
-import Contacts from './Contacts/Contacts.js';
+import Contacts from './Contacts/Contacts';
+import History from './History/History';
+import Profile from './Profile/Profile';
+
 
 const routes = (
   <Router history={browserHistory}>
     <Route path="login" component={Login} onEnter={isAuth}/>
     <Route path="/" component={Bazu} onEnter={requireAuth}>
       <IndexRoute component={Contacts}/>
+      <Route path="History" component={History}/>
+      <Route path="Profile" component={Profile}/>
     </Route>
   </Router>
 );
