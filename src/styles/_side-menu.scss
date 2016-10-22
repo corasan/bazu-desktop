@@ -1,9 +1,17 @@
 .side-menu {
-  display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: white;
   position: fixed;
   height: 100%;
+  width: 16%;
   margin-top: -8px;
   padding: 16px;
+  flex: 1;
+
+  // Border
+  border-right-color: #F3F3F3;
+  border-width: 2px;
+  border-right-style: solid;
 }
+
+// color: #929292;
