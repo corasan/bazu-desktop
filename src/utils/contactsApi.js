@@ -40,5 +40,5 @@ export const saveContact = (name, email, number) => {
         number: number
       });
     }
-  }
+  });
 }
