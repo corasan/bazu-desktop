@@ -5,7 +5,6 @@ module.exports = {
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr`,
     './src/index.js',
-    './dist/styles.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -24,7 +23,10 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       { test: /\.json$/, loader: 'json' },
-      { test: /\.css$/, loader: "style-loader!css-loader" }
+      { test: /\.scss$/,
+				include: path.join(__dirname, 'src'),
+				loader: 'style!css!sass'
+      }
     ],
     query: {
       presets: ['react', 'es2015', 'stage-0']
