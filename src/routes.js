@@ -14,8 +14,8 @@ const routes = (
     <Route path="login" component={Login} onEnter={isAuth}/>
     <Route path="/" component={Bazu} onEnter={requireAuth}>
       <IndexRoute component={Contacts}/>
-      <Route path="History" component={History}/>
-      <Route path="Profile" component={Profile}/>
+      <Route path="history" component={History}/>
+      <Route path="profile" component={Profile}/>
     </Route>
   </Router>
 );
