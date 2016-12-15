@@ -27,6 +27,7 @@ $sideMenu-btn-padding: 14px 0 14px 0;
   }
 
   ul {
+    margin-top: 100px;
     width: 100%;
     list-style-type: none;
     padding: 0;
@@ -38,7 +39,8 @@ $sideMenu-btn-padding: 14px 0 14px 0;
 
   .active-btn {
     border-right-color: $green;
-    border-right-width: 4px;
+    border-right-width: 5px;
     border-right-style: solid;
+    background-color: #292F40;
   }
 }

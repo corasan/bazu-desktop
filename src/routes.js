@@ -9,15 +9,17 @@ import History from './History/History';
 import Profile from './Profile/Profile';
 
 
-const routes = (
-  <Router history={browserHistory}>
-    <Route path="login" component={Login} onEnter={isAuth}/>
-    <Route path="/" component={Bazu} onEnter={requireAuth}>
-      <IndexRoute component={Contacts}/>
-      <Route path="history" component={History}/>
-      <Route path="profile" component={Profile}/>
-    </Route>
-  </Router>
-);
-
-export default routes;
+export default class Root extends React.Component {
+  render() {
+    return (
+      <Router history={browserHistory}>
+        <Route path="login" component={Login} onEnter={isAuth}/>
+        <Route path="/" component={Bazu} onEnter={requireAuth}>
+          <IndexRoute component={Contacts}/>
+          <Route path="history" component={History}/>
+          <Route path="profile" component={Profile}/>
+        </Route>
+      </Router>
+    );
+  }
+}

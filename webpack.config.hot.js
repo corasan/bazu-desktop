@@ -3,8 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    `webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr`,
-    './src/index.js',
+      `webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr`,
+      './src/index.js',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        loaders: ['babel-loader'],
         include: path.join(__dirname, 'src')
       },
       { test: /\.json$/, loader: 'json' },
